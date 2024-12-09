@@ -2,7 +2,7 @@
 
 Repositório criado para aprendizado da linguagem Python
 
-# Preparação da máquina do desenvolvedor
+## Preparação da máquina do desenvolvedor
 
 Instalar na máquina de desenvolvimento:
 
@@ -22,7 +22,7 @@ Instalar na máquina de desenvolvimento:
 
 Ainda, criar conta no site github (https://github.com/)
 
-# Instalação do Python
+## Instalação do Python
 
 Para realizar a instalação do Python para todos os usuários da máquina, durante a instalação, marque as opções indicadas nas imagens abaixo:
 
@@ -42,7 +42,7 @@ Executar o comando abaixo no powershell com permissão de administrator
 Set-ExecutionPolicy -Scope LocalMachine -ExecutionPolicy RemoteSigned
 ```
 
-# Instalação do Visual Studio 2022
+## Instalação do Visual Studio 2022
 
 Para conseguir realizar a integração do Python com o postgres no Windows é necessário realizar a instalação das ferramentas de compilação C++ do VisualStudio Community 2022. Para isso selecione os seguintes pacotes.
 
