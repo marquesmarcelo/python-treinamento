@@ -1,11 +1,19 @@
 # Plano de Estudos
 
+## Apostilas
+
+http://antigo.scl.ifsp.edu.br/portal/arquivos/2016.05.04_Apostila_Python_-_PET_ADS_S%C3%A3o_Carlos.pdf
+
+https://tmfilho.github.io/pyestbook/intro.html
+
 - [ ] Aula 1: Introdução e Configuração do Ambiente
 * Objetivo: Preparar o ambiente para desenvolvimento em Python.
   - [ ] Instalação do Python e configuração do PATH.
   - [ ] Instalação de um editor de texto ou IDE (Visual Studio Code, PyCharm ou similar).
+  - [ ] Configuração do Colab (para quem vai trabalhar na nuvem porém sem suporte a postgres).
   - [ ] Uso básico do terminal/console.
   - [ ] Instalação de bibliotecas com pip.
+  - [ ] Configuração do sistema de controle de versão (git)
 
 - [ ] Aula 2: Fundamentos de Python para Ciência de Dados
 * Objetivo: Revisar os conceitos básicos de Python necessários para ciência de dados.
@@ -13,6 +21,8 @@
   - [ ] Funções e compreensão de listas.
   - [ ] Manipulação básica de strings e datas.
   
+--- Em elaboração.
+
 - [ ] Aula 3: Introdução ao NumPy
 * Objetivo: Explorar o uso de NumPy para manipulação de dados numéricos.
   - [ ] Arrays: criação, indexação, slicing e operações matemáticas.
