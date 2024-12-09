@@ -35,14 +35,34 @@ Certifique-se de que as bibliotecas necessárias para manipular arquivos Excel e
 Use o Pandas para abrir o arquivo Excel:
 
 ```python
+# Instalar as bibliotecas necessárias
+!pip install numpy pandas openpyxl matplotlib scipy
+
+# 1. Montar o Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Listar os arquivos no drive
+!ls /content/drive/MyDrive
+
+# 2. Importar bibliotecas necessárias
 import pandas as pd
 
-# Caminho para o arquivo no Google Drive
-caminho_arquivo = '/content/drive/MyDrive/seu_arquivo.xlsx'
+# 3. Especificar o caminho do arquivo no Google Drive
+# Substitua "MyDrive/seu_arquivo.xlsx" pelo caminho correto do seu arquivo no Google Drive
+caminho_arquivo = '/content/drive/MyDrive/Colab Notebooks/cliente.xlsx'
 
-# Carregar o arquivo Excel em um DataFrame
-df = pd.read_excel(caminho_arquivo)
+# 4. Ler o arquivo Excel em um DataFrame
+try:
+    df = pd.read_excel(caminho_arquivo)
+    print("Arquivo carregado com sucesso!")
+except Exception as e:
+    print(f"Erro ao carregar o arquivo: {e}")
 
-# Exibir as primeiras linhas do DataFrame
+# 5. Exibir as primeiras linhas do DataFrame
 print(df.head())
+
+# 6. Exibir informações gerais do DataFrame (opcional)
+print("\nInformações sobre o DataFrame:")
+print(df.info())
 ```
