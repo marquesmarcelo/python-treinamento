@@ -1,5 +1,5 @@
 from application.interfaces.vector_store_interface import VectorStoreInterface
-from infrastructure.pdf_loader.pdf_loader_pypdf import PDFLoader
+from infrastructure.file_loader.pdf_loader_pypdf import PDFLoader
 from domain.services.text_splitter import TextSplitter
 
 class FileInteraction:
