@@ -39,7 +39,7 @@ class LlamaRestClient(ChatModelInterface):
 
             # Verifica se o PDF já está no banco
             existing_hashes = self.vector_store.get_all_hashes()
-            print (pdf_hash, existing_hashes)
+            
             if pdf_hash in existing_hashes:
                 print(f"O PDF '{pdf_path}' já foi processado. Ignorando...")
                 return
@@ -50,6 +50,7 @@ class LlamaRestClient(ChatModelInterface):
 
             # Cria metadados para cada segmento
             metadatas = [{"source": pdf_path, "segment_index": i, "hash": pdf_hash} for i in range(len(pdf_content.segments))]
+            
             # Adiciona os segmentos e metadados ao banco de vetores
             self.vector_store.add_to_index(pdf_content.segments, metadatas)
             print(f"PDF '{pdf_path}' adicionado ao banco de vetores.")

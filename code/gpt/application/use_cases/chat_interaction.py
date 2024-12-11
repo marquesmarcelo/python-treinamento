@@ -5,7 +5,6 @@ from application.interfaces.chat_model_interface import ChatModelInterface
 class ChatInteraction:
     def __init__(self, chat_model: ChatModelInterface):
         self.chat_model = chat_model
-        self.vector_store = chat_model.vector_store
 
     def send_message(self, messages):
         """
@@ -17,11 +16,21 @@ class ChatInteraction:
         user_message = messages[-1].content
 
         # Consulta ao banco de vetores
-        context_segments, metadatas = self.vector_store.query(user_message, top_k=5)
-        print("estou aqui", context_segments)
+        context_segments, metadatas = self.chat_model.vector_store.query(user_message, top_k=5)
+  
         # Combine o contexto do banco de vetores com a mensagem
         context = "\n".join(context_segments)
-        enriched_message = f"Contexto relevante:\n{context}\n\nPergunta do usuário:\n{user_message}"
+        
+        enriched_message = (
+            f"Contexto fornecido:\n"
+            f"{context}\n\n"
+            f"Pergunta:\n"
+            f"{user_message}\n\n"
+            f"Regras:\n"
+            f"1. Responda com base apenas no contexto fornecido acima.\n"
+            f"2. Se o contexto não for suficiente para responder, diga: "
+            f"'Não há informações suficientes no contexto fornecido.'"
+        )
 
         # Substitua a última mensagem pelo texto enriquecido
         messages[-1].content = enriched_message
