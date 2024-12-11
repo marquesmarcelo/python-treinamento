@@ -41,7 +41,5 @@ API Key: Acesse a página de configurações da OpenAI (`https://platform.openai
 Instale o openai: Certifique-se de que o pacote Python da OpenAI esteja instalado. Você pode instalá-lo com:
 
 ```bash
-pip install typing openai pypdf
-pip install langchain chromadb
-pip install faiss-cpu sentence-transformers
+pip install openai pypdf chromadb sentence-transformers
 ```
