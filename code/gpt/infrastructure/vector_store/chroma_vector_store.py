@@ -8,7 +8,7 @@ class ChromaVectorStore(VectorStoreInterface):
         """Inicializa o ChromaVectorStore com persistência."""
         self.persist_directory = persist_directory
         self.client = chromadb.PersistentClient(path=persist_directory)
-        self.collection_name = "pdf_segments"
+        self.collection_name = "file_segments"
         self.embedding_fn = embedding_functions.SentenceTransformerEmbeddingFunction(
             model_name="all-MiniLM-L6-v2"
         )
@@ -55,13 +55,6 @@ class ChromaVectorStore(VectorStoreInterface):
         print(f"{len(segments)} segmentos adicionados ao banco.")
 
     def query(self, query_text: str, top_k: int) -> Tuple[List[str], List[dict]]:
-        """Consulta o banco de vetores."""
-        results = self.collection.query(
-            query_texts=[query_text], n_results=top_k
-        )
-        return results["documents"], results["metadatas"]
-
-    def query(self, query_text: str, top_k: int) -> Tuple[List[str], List[dict]]:
         """
         Consulta o banco de vetores e retorna os segmentos mais similares com metadados.
         :param query_text: Texto da consulta.
@@ -82,7 +75,7 @@ class ChromaVectorStore(VectorStoreInterface):
     
     def get_all_hashes(self) -> List[str]:
         """
-        Retorna todas as hashes dos PDFs armazenados no banco de vetores.
+        Retorna todas as hashes dos arquivos armazenados no banco de vetores.
         :return: Lista de hashes.
         """
         try:
