@@ -15,7 +15,7 @@ vector_store = ChromaVectorStore(persist_directory="chroma_db")
 
 def main():
     # Configurar qual modelo usar: "openai", "llama" ou "llama-pdf"
-    modelo_escolhido = "llama"  # Altere para o modelo desejado
+    modelo_escolhido = "llama-pdf"  # Altere para o modelo desejado
 
     if modelo_escolhido == "openai":
         # Configurar o cliente OpenAI
@@ -31,7 +31,11 @@ def main():
 
     # Modo "llama-pdf": adicionar PDFs ao banco de vetores antes da consulta
     if modelo_escolhido == "llama-pdf":
-        pdf_path = "example.pdf"  # Substitua pelo caminho real do PDF
+        # Diretório do script
+        diretorio_script = os.path.dirname(os.path.abspath(__file__))
+
+        # Caminho relativo (dois níveis acima)        
+        pdf_path = os.path.join(diretorio_script, r"../../assets/base_treinamento.pdf")  # Substitua pelo caminho real do PDF
         print(f"Adicionando PDF '{pdf_path}' ao banco de vetores...")
         chat_model.add_pdf(pdf_path)
         print("PDF adicionado com sucesso!")
@@ -44,7 +48,6 @@ def main():
     # Enviar mensagem e obter resposta
     resposta = chat_interaction.send_message(messages)
     print(f"Resposta do modelo ({modelo_escolhido}): {resposta}")
-
 
 if __name__ == "__main__":
     main()
