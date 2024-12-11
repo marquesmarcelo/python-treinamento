@@ -4,9 +4,9 @@ import json
 from typing import List
 from domain.models.chat_message import ChatMessage
 from application.interfaces.chat_model_interface import ChatModelInterface
-from infrastructure.pdf_loader.pdf_loader_pypdf import PDFLoader
+from infrastructure.file_loader.pdf_loader_pypdf import PDFLoader
 from application.interfaces.vector_store_interface import VectorStoreInterface
-from domain.models.pdf_content import PDFContent
+from domain.models.file_content import FileContent
 
 class LlamaRestClient(ChatModelInterface):
     def __init__(self, api_url: str, vector_store: VectorStoreInterface):
@@ -46,7 +46,7 @@ class LlamaRestClient(ChatModelInterface):
 
             # Extrai texto do PDF e processa
             raw_text = PDFLoader.load_text_from_pdf(pdf_path)
-            pdf_content = PDFContent.from_raw_text(raw_text)
+            pdf_content = FileContent.from_raw_text(raw_text)
 
             # Cria metadados para cada segmento
             metadatas = [{"source": pdf_path, "segment_index": i, "hash": pdf_hash} for i in range(len(pdf_content.segments))]

@@ -15,7 +15,7 @@ vector_store = ChromaVectorStore(persist_directory="chroma_db")
 
 def main():
     # Configurar qual modelo usar: "openai", "llama" ou "llama-pdf"
-    modelo_escolhido = "llama"  # Altere para o modelo desejado
+    modelo_escolhido = "llama-pdf"  # Altere para o modelo desejado
 
     if modelo_escolhido == "openai":
         # Configurar o cliente OpenAI

@@ -2,7 +2,7 @@
 
 ## Instalação do servidor REST do Ollama localmente usando docker e WSL
 
-Abrir o WSL (usei o Ubuntu)
+Abrir a console do WSL (usei o Ubuntu)
 
 Configurar o repositório
 
@@ -41,5 +41,5 @@ API Key: Acesse a página de configurações da OpenAI (`https://platform.openai
 Instale o openai: Certifique-se de que o pacote Python da OpenAI esteja instalado. Você pode instalá-lo com:
 
 ```bash
-pip install openai pypdf chromadb sentence-transformers
+pip install openai PyPDF2 chromadb sentence-transformers
 ```

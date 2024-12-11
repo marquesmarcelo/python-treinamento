@@ -2,7 +2,7 @@ from application.interfaces.vector_store_interface import VectorStoreInterface
 from infrastructure.pdf_loader.pdf_loader_pypdf import PDFLoader
 from domain.services.text_splitter import TextSplitter
 
-class PDFInteraction:
+class FileInteraction:
     def __init__(self, vector_store: VectorStoreInterface):
         self.vector_store = vector_store
 
