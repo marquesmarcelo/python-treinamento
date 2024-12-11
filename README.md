@@ -4,9 +4,11 @@ Repositório criado para aprendizado da linguagem Python
 
 ## Preparação da máquina do desenvolvedor
 
+Criar conta no site github (https://github.com/)
+
 Instalar na máquina de desenvolvimento:
 
-1 - Python (https://www.python.org/downloads/)
+1 - Python (https://www.python.org/downloads/) *Durante a instalação seguir as orientações do próximo tópico*
 
 2 - Visual Studio Code (https://visualstudio.microsoft.com/pt-br/)
 
@@ -22,7 +24,8 @@ Para adicionar o suporte para postgres no Python do Windows é necessário insta
 
 7 - Instalar o VisualStudio 2022 (https://visualstudio.microsoft.com/pt-br/visual-cpp-build-tools/)
 
-Ainda, criar conta no site github (https://github.com/)
+8 - WSL com Docker (https://github.com/codeedu/wsl2-docker-quickstart)
+
 
 ## Instalação do Python
 
