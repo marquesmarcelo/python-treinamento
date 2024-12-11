@@ -17,47 +17,47 @@ class LlamaRestClient(ChatModelInterface):
         self.api_url = api_url
         self.vector_store = vector_store
 
-    def _calculate_pdf_hash(self, pdf_path: str) -> str:
+    def _calculate_file_hash(self, file_path: str) -> str:
         """
-        Calcula a hash SHA-256 do PDF.
-        :param pdf_path: Caminho do arquivo PDF.
-        :return: Hash do conteúdo do PDF.
+        Calcula a hash SHA-256 do arquivo.
+        :param file_path: Caminho do arquivo.
+        :return: Hash do conteúdo do rquivo.
         """
         hasher = hashlib.sha256()
-        with open(pdf_path, "rb") as pdf_file:
-            hasher.update(pdf_file.read())
+        with open(file_path, "rb") as bin_file:
+            hasher.update(bin_file.read())
         return hasher.hexdigest()
     
-    def add_pdf(self, pdf_path: str):
+    def add_file(self, file_path: str):
         """
-        Adiciona texto de um PDF ao banco de vetores, se ainda não existir.
+        Adiciona texto de um arquivo ao banco de vetores, se ainda não existir.
         :param pdf_path: Caminho do arquivo PDF.
         """
         try:
-            # Calcula a hash do PDF
-            pdf_hash = self._calculate_pdf_hash(pdf_path)
+            # Calcula a hash do arquivo
+            pdf_hash = self._calculate_file_hash(file_path)
 
             # Verifica se o PDF já está no banco
             existing_hashes = self.vector_store.get_all_hashes()
             
             if pdf_hash in existing_hashes:
-                print(f"O PDF '{pdf_path}' já foi processado. Ignorando...")
+                print(f"O arquivo '{file_path}' já foi processado. Ignorando...")
                 return
 
             # Extrai texto do PDF e processa
-            raw_text = PDFLoader.load_text_from_pdf(pdf_path)
-            pdf_content = FileContent.from_raw_text(raw_text)
+            raw_text = PDFLoader.load_text_from_pdf(file_path)
+            file_content = FileContent.from_raw_text(raw_text)
 
             # Cria metadados para cada segmento
-            metadatas = [{"source": pdf_path, "segment_index": i, "hash": pdf_hash} for i in range(len(pdf_content.segments))]
+            metadatas = [{"source": file_path, "segment_index": i, "hash": pdf_hash} for i in range(len(file_content.segments))]
             
             # Adiciona os segmentos e metadados ao banco de vetores
-            self.vector_store.add_to_index(pdf_content.segments, metadatas)
-            print(f"PDF '{pdf_path}' adicionado ao banco de vetores.")
+            self.vector_store.add_to_index(file_content.segments, metadatas)
+            print(f"Arquivo '{file_path}' adicionado ao banco de vetores.")
         except Exception as e:
-            raise RuntimeError(f"Erro ao processar o PDF '{pdf_path}': {e}")
+            raise RuntimeError(f"Erro ao processar o PDF '{file_path}': {e}")
 
-    def query_pdf(self, query_text: str, top_k: int = 5):
+    def query_file(self, query_text: str, top_k: int = 5):
         """Consulta o banco de vetores com um texto e retorna os resultados."""
         indices, distances = self.vector_store.query(query_text, top_k)
         return indices, distances

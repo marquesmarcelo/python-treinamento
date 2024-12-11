@@ -36,9 +36,9 @@ def main():
 
         # Caminho relativo (dois níveis acima)        
         pdf_path = os.path.join(diretorio_script, r"../../assets/base_treinamento.pdf")  # Substitua pelo caminho real do PDF
-        print(f"Adicionando PDF '{pdf_path}' ao banco de vetores...")
-        chat_model.add_pdf(pdf_path)
-        print("PDF adicionado com sucesso!")
+        print(f"Adicionando arquivo '{pdf_path}' ao banco de vetores...")
+        chat_model.add_file(pdf_path)
+        print("Arquivo adicionado com sucesso!")
 
     # Mensagens de exemplo
     messages = [
