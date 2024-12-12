@@ -3,6 +3,7 @@ from application.use_cases.chat_interaction import ChatInteraction
 from infrastructure.llama.llama_rest_client import LlamaRestClient
 from infrastructure.openai.openai_client import OpenAIClient
 from infrastructure.vector_store.chroma_vector_store import ChromaVectorStore
+from infrastructure.file_loader.file_loader import FileLoader
 import os
 from dotenv import load_dotenv
 
@@ -37,7 +38,9 @@ def main():
         # Caminho relativo (dois níveis acima)        
         pdf_path = os.path.join(diretorio_script, r"../../assets/base_treinamento.pdf")  # Substitua pelo caminho real do PDF
         print(f"Adicionando arquivo '{pdf_path}' ao banco de vetores...")
-        chat_model.add_file(pdf_path)
+        file_loader = FileLoader(pdf_path, vector_store=vector_store)
+        
+        file_loader.add_file(pdf_path)
         print("Arquivo adicionado com sucesso!")
 
     # Mensagens de exemplo

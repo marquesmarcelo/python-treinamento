@@ -1,6 +1,6 @@
 import PyPDF2
 
-class PDFLoader:
+class PDFLoaderPyPDF:
     @staticmethod
     def load_text_from_pdf(pdf_path: str) -> str:
         """
