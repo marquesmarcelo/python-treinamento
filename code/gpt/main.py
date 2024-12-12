@@ -40,7 +40,7 @@ def main():
         print(f"Adicionando arquivo '{pdf_path}' ao banco de vetores...")
         file_loader = FileLoader(pdf_path, vector_store=vector_store)
         
-        file_loader.add_file(pdf_path)
+        file_loader.add_file()
         print("Arquivo adicionado com sucesso!")
 
     # Mensagens de exemplo
