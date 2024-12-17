@@ -12,9 +12,11 @@ Instalar na máquina de desenvolvimento (máquina Windows):
 
 2 - Visual Studio Code (https://code.visualstudio.com/Download)
 
-3 - Dbeaver - https://dbeaver.io/download/
+3 - Dbeaver (https://dbeaver.io/download/)
 
 4 - Modelio UML (https://www.modelio.org/index.htm)
+
+5 - QGis (https://www.qgis.org/download/)
 
 Dentro da VM Linux no WSL instalar os seguintes pacotes:
 

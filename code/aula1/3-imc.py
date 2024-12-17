@@ -2,12 +2,12 @@
 # Multiplique a sua altura em metros por ela mesma. Por exemplo, se você medir 1,60 m, o cálculo será: 1,6 x 1,6 = 2,56. 
 # Divida o seu peso em quilogramas pelo resultado da multiplicação. 
 
-# area de entrada
+# Entrada (default: teclado; mas pode ser trocado para: mouse, arquivo)
 altura = float(input("Digite altura: "))
 peso = float(input("Digite peso: ") )
 
-# processamento
+# Processamento
 imc = peso / ( altura * altura )
 
-# saida (tela, arquvo, impressora, banco de dados)
+# Saida (default: tela; mas pode ser trocado para: arquivo, impressora)
 print("imc:", imc)
