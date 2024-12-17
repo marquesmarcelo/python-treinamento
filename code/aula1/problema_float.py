@@ -2,6 +2,8 @@
 
 valor1 = 0.1
 valor2 = 0.2
+print (type(valor1))
+
 resultado = valor1 + valor2
 print(resultado)  # Saída: 0.30000000000000004
 

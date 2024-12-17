@@ -8,9 +8,9 @@ https://tmfilho.github.io/pyestbook/intro.html
 
 - [ ] Aula 1: Introdução e Configuração do Ambiente
 * Objetivo: Preparar o ambiente para desenvolvimento em Python.
-  - [ ] Instalação do Python e configuração do PATH.
-  - [ ] Instalação de um editor de texto ou IDE (Visual Studio Code, PyCharm ou similar).
-  - [ ] Configuração do Colab (para quem vai trabalhar na nuvem porém sem suporte a postgres).
+  - [x] Instalação do Python e configuração do PATH.
+  - [x] Instalação de um editor de texto ou IDE (Visual Studio Code, PyCharm ou similar).
+  - [x] Configuração do Colab (para quem vai trabalhar na nuvem porém sem suporte a postgres).
   - [ ] Uso básico do terminal/console.
   - [ ] Instalação de bibliotecas com pip.
   - [ ] Configuração do sistema de controle de versão (git)
