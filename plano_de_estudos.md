@@ -24,11 +24,15 @@ Programação Aplicada ao SIG: https://github.com/marcellobenigno/curso_pyqgis
   - [x] Variáveis e tipos de dados.
   - [x] Manipulação de strings.
 
-- [ ] Aula 3: Fundamentos de Python - continuação
+- [x] Aula 3: Fundamentos de Python - continuação
 * Objetivo: Revisar os conceitos básicos de Python.
-  - [ ] Operadores matemáticos básicos.
+  - [x] Operadores básicos.
+  - [x] Estrutura condicional.
+
+  - [ ] Aula 4: Fundamentos de Python - continuação
+* Objetivo: Revisar os conceitos básicos de Python.
   - [ ] Coleções (listas, tuplas e dicionários).
-  - [ ] Condições e Laços.
+  - [ ] Estrutura de repetição
 
 - [ ] Aula 4: Fundamentos de Python - continuação
 * Objetivo: Revisar os conceitos básicos de Python.
