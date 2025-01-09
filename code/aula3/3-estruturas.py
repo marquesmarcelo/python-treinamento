@@ -20,3 +20,4 @@ notas = [5, 10, 3, 5, 7, 9, 10, 8, 3, 5]
 
 # Cálculo e saída da média
 print(f"Média = {sum(notas) / len(notas)}")
+
